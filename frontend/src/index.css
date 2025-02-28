@@ -1,0 +1,168 @@
+/* 🌙 Cyberpunk Dark Mode (Default) */
+:root {
+  --bg-color: #0d0d1a;
+  --msg-bg-user: linear-gradient(135deg, #00aaff, #0055ff);
+  --msg-bg-other: linear-gradient(135deg, #6a00f4, #9a00f4);
+  --text-color: white;
+  --input-bg: #1b1b2f;
+  --input-border: rgba(255, 255, 255, 0.2);
+  --button-bg: linear-gradient(135deg, #ff0055, #ff7700);
+  --button-hover: linear-gradient(135deg, #cc0044, #ff5500);
+}
+
+/* Additional Themes */
+
+/* 🌃 Midnight Blue Theme */
+[data-theme="midnight"] {
+  --bg-color: #121826;
+  --msg-bg-user: linear-gradient(135deg, #3a86ff, #8338ec);
+  --msg-bg-other: linear-gradient(135deg, #ff006e, #ffbe0b);
+  --text-color: #fff;
+  --input-bg: #1e2432;
+  --input-border: rgba(255, 255, 255, 0.2);
+  --button-bg: linear-gradient(135deg, #f72585, #b5179e);
+  --button-hover: linear-gradient(135deg, #9d02d7, #7209b7);
+}
+
+/* 🌿 Forest Theme */
+[data-theme="forest"] {
+  --bg-color: #1a3d2f;
+  --msg-bg-user: linear-gradient(135deg, #4caf50, #2e7d32);
+  --msg-bg-other: linear-gradient(135deg, #a1887f, #6d4c41);
+  --text-color: #e8f5e9;
+  --input-bg: #2e7d32;
+  --input-border: rgba(255, 255, 255, 0.2);
+  --button-bg: linear-gradient(135deg, #66bb6a, #388e3c);
+  --button-hover: linear-gradient(135deg, #43a047, #2e7d32);
+}
+
+/* ☀️ Soft Pastel Mode */
+[data-theme="pastel"] {
+  --bg-color: #f3f3f7;
+  --msg-bg-user: linear-gradient(135deg, #8ecae6, #219ebc);
+  --msg-bg-other: linear-gradient(135deg, #f4a261, #e76f51);
+  --text-color: #333;
+  --input-bg: white;
+  --input-border: rgba(0, 0, 0, 0.2);
+  --button-bg: linear-gradient(135deg, #ffb703, #fb8500);
+  --button-hover: linear-gradient(135deg, #ff9100, #ff6500);
+}
+
+/* Chat Container */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 450px;
+  height: 90vh;
+  background: var(--bg-color);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Messages Container */
+.messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* Sent Message (User) */
+.my-message {
+  background: var(--msg-bg-user);
+  color: var(--text-color);
+  align-self: flex-end;
+  padding: 12px 16px;
+  border-radius: 20px 20px 0 20px;
+  margin: 5px;
+  max-width: 75%;
+  box-shadow: 2px 4px 10px rgba(0, 120, 255, 0.4);
+  text-align: right;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Received Message (Other) */
+.other-message {
+  background: var(--msg-bg-other);
+  color: var(--text-color);
+  align-self: flex-start;
+  padding: 12px 16px;
+  border-radius: 20px 20px 20px 0;
+  margin: 5px;
+  max-width: 75%;
+  box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.1);
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Input Area */
+.input-area {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: var(--input-bg);
+  border-top: 1px solid var(--input-border);
+}
+
+/* Input Box */
+input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: var(--input-bg);
+  color: var(--text-color);
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+              inset -4px -4px 8px rgba(255, 255, 255, 0.05);
+}
+
+input:focus {
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.3),
+              inset -2px -2px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Send Button */
+button {
+  background: var(--button-bg);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 2px 10px rgba(76, 175, 80, 0.4);
+}
+
+button:hover {
+  background: var(--button-hover);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Scrollbar Styling */
+.messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.messages::-webkit-scrollbar-track {
+  background: transparent;
+}
